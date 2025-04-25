@@ -25,20 +25,12 @@ A modern, AI-enhanced web scraper built with Next.js and Gemini API. Simply ente
 
 ---
 
-## Demo
-
-> Paste a URL, hit "Scrape", and see Gemini do the work.
-
-![Demo](https://placehold.co/700x300?text=Demo+Screenshot)
-
----
-
 ## Getting Started
 
 ### 1. Clone the Repository
 
-git clone https://github.com/your-username/nextjs-gemini-scraper.git
-cd nextjs-gemini-scraper
+git clone https://github.com/Gurushanth1/scrapeeit.git
+cd scrapeeit
 
 ### 2. Install Dependencies
 
