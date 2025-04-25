@@ -7,6 +7,8 @@
 A modern, AI-enhanced web scraper built with Next.js and Gemini API. Simply enter a URL, and the AI will read and summarize the content from that link. No manual scraping or parsing — just plug and play intelligence.
 
 ---
+## Demo
+! [Demo](https://scrapeit-6yv0hq8b3-gurushanth1s-projects.vercel.app/)
 
 ## Features
 
