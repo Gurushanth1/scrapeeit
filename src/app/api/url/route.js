@@ -80,7 +80,7 @@ export async function GET(req) {
     // fetch the URL from the database
     const { data, error } = await supabase
         .from('urls')
-        .select('*');
+        .select('*').order('created_at', { ascending: false });
         if(!data || data?.length === 0||!data[0]){
             return NextResponse.json({message:"No urls found"}, {status:404})
         };

@@ -2,7 +2,7 @@ import React from 'react';
 import { FaTrash } from "react-icons/fa";
 
 const Table = ({ items, onDelete, onOpen }) => {
-    if (!items || items?.length === 0) {
+    if (!items || items?.length <= 0) {
         return (
             <div className="    p-8 text-center">
                 <p className="text-gray-500">No content extracted yet. Try adding a URL above.</p>
@@ -23,7 +23,7 @@ const Table = ({ items, onDelete, onOpen }) => {
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-notion-border">
-                        {items.map((item) => {
+                        {items.length > 0 && items?.map((item) => {
 
                             const data = item.data
                             const summary = data.summary
@@ -31,7 +31,7 @@ const Table = ({ items, onDelete, onOpen }) => {
                             return (
                                 <tr
                                     key={item.id}
-                                    className="hover:bg-gray-700 cursor-pointer"
+                                    className="cursor-pointer"
                                     onClick={() => onOpen(item)}
                                 >
                                     <td className="px-6 py-4">

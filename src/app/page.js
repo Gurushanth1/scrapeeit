@@ -64,7 +64,7 @@ const[  scraping,setScraping] = useState(false);
     setData(data);
   };
   return (
-    <div>
+    <div className="bg-black min-h-screen max-h-full">
       <header className="py-6 px-8">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center gap-4">
@@ -91,11 +91,11 @@ const[  scraping,setScraping] = useState(false);
                   setUrl(e.target.value);
                   setError('');
                 }}
-                className={`text-xl flex-1 ${error ? 'border-red-500' : ''} border-2 border-amber-50 rounded-full p-5 outline-0`}
+                className={`sm: p-2 md:p-5 text-xl flex-1 ${error ? 'border-red-500' : ''} border-2 border-amber-50 rounded-full outline-0 text-white `}
               />
               <button
                 type="submit"
-                className="text-white rounded-full cursor-pointer text-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:bg-blue-700 px-8"
+                className="px-6 text-white rounded-full cursor-pointer text-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:bg-blue-700  "
               >
                {scraping ? 
                "Scraping..." 
@@ -110,20 +110,20 @@ const[  scraping,setScraping] = useState(false);
         </div>
       </div>
       {/* filters and search */}
-      <div className="flex items-center justify-between max-w-5xl mx-auto px-8 py-8">
-        <div className="flex items-center gap-4">
-          <h2 className="text-2xl font-bold text-white">Extracted Content</h2>
-        </div>
-        <div className="flex items-center gap-4">
- 
-            <input
-              type="text"
-              placeholder="Search..."
-              value={search}
-              onChange={(e) => {
+        <div className="flex items-center justify-between max-w-5xl mx-auto px-8 py-8 hidden sm:flex">
+          <div className="flex items-center gap-4">
+            <h2 className="text-2xl font-bold text-white ">Extracted Content</h2>
+          </div>
+          <div className="flex items-center gap-4">
+       
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => {
                 setSearch(e.target.value);
               }}
-              className="border-2 border-gray-300 rounded-full px-4 py-2"
+              className="border-2 border-gray-300 rounded-full px-4 py-2 text-white"
             />
             <button   onClick={(e) => {
          
@@ -142,7 +142,7 @@ const[  scraping,setScraping] = useState(false);
             <path className="opacity-75" fill="none" d="M4 12a8 8 0 1 1 16 0A8 8 0 1 1 4 12z" />
           </svg>
         </div>
-      :<Table items={data} onDelete={(id) => {
+      :  <Table items={data} onDelete={(id) => {
 
         fetch(`/api/url/${id}`, {
           method: 'DELETE',
@@ -156,7 +156,7 @@ const[  scraping,setScraping] = useState(false);
 
       {selectedSite && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gray-500 rounded-lg p-6 max-w-3xl mx-auto">
+          <div className="bg-gray-200 text-black rounded-lg p-6 max-w-3xl mx-auto">
             <h2 className="text-xl font-bold mb-4">{selectedSite.title}</h2>
             <p className="mb-4">{selectedSite.data.summary}</p>
             <h3 className="font-semibold mb-2">Key Points:</h3>
